@@ -12,7 +12,7 @@ Console.WriteLine(Exponent(numberA, numberB));
 int Exponent(int numA, int numB)
 {
     int result = 1;
-    for (int i = 1; i <= numB; i++)
+    for (int i = 0; i < numB; i++)
     {
         result = result * numA;
     }
