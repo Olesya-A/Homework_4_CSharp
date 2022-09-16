@@ -4,7 +4,7 @@
 // 9012 -> 12
 
 Console.Write("Введите число N: ");
-int number = int.Parse(Console.ReadLine());
+int number = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine(SumOfDigits(number));
 
