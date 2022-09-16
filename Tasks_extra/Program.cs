@@ -1,10 +1,11 @@
-﻿// Задача А. Программа заполняет массив 8 случайными числами. 
+﻿// ЗАДАЧА А. Программа заполняет массив 8 случайными числами. 
 // Напишите функцию, которая находит среднее арифметическое чисел в массиве. 
 
 
-//int[] array = CreateArray(8);
-// Console.WriteLine($"[{string.Join(", ", array)}]");
-Console.WriteLine(GetAverage(array));
+int[] array = CreateArray(8);
+Console.WriteLine($"[{string.Join(", ", array)}]");
+// int[] array = {2,4,6,8,6}; //  заданный массив для проверки методов
+Console.WriteLine($"Среднее арифметическое массива = {GetAverage(array)}");
 
 
 int[] CreateArray(int size)
@@ -35,7 +36,7 @@ double GetAverage(int[] array)
 // Используйте накопительную переменную. Эта переменная изначально равна первому элементу массива; 
 // когда встречается лучший кандидат на максимум, она его запоминает.
 
-Console.WriteLine(FindMax(array));
+Console.WriteLine($"Наибольший элемент массива = {FindMax(array)}");
 
 int FindMax(int[] array)
 {
@@ -61,4 +62,34 @@ bool IsEven(int[] array)
     return check;
 }
 
-Console.WriteLine(IsEven(array));
+bool checker1 = IsEven(array);
+string answer1 = string.Empty;
+if (checker1 == true) answer1 = "да";
+else answer1 = "нет";
+
+Console.WriteLine($"Числа в массиве чётные? - {answer1}");
+
+//Console.WriteLine($"Числа в массиве чётные? - {IsEven(array)}"); // true or false
+
+// Задача Г. Программа заполняет массив 8 случайными числами. 
+// Напишите функцию, которая проверяет, верно ли, что числа в массиве идут по возрастанию. 
+// Если очередное число меньше предыдущего, ответ — нет.
+
+bool IsAscending(int[] array)
+{
+    bool check = true;
+    for (int i = 0; i < array.Length-1; i++)
+    {
+        if (array[i+1] < array[i]) check = false;
+    }
+    return check;
+}
+
+bool checker2 = IsAscending(array);
+string answer2 = string.Empty;
+if (checker2 == true) answer2 = "да";
+else answer2 = "нет";
+
+Console.WriteLine($"Числа в массиве идут по возрастанию? - {answer2}");
+
+// Console.WriteLine($"Числа в массиве идут по возрастанию? - {IsAscending(array)}"); // true or false
